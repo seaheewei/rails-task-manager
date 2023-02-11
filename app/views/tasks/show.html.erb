@@ -2,7 +2,13 @@
 
 <p><%= @task.details %></p>
 
-<p><%= @task.completed? ? "This task is completed" : "This task is not completed yet" %></p>
+<% if @task.completed? %>
+  <i class="fa-regular fa-square-check"></i> This task is completed
+<% else %>
+  <i class="fa-regular fa-square"></i> This task is not completed yet
+<% end %>
 
+
+<br><br>
 <p><%= link_to "Edit this task", edit_path(@task) %></p>
 <p><%= link_to "Back to all tasks", tasks_path %></p>
